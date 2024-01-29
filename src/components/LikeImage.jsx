@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
+import HOC from './HOC'
 
-export default function LikeImage() {
+function LikeImage(props) {
 
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
 
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
+  const {likeImageCounter,handleLikeImageCount}=props
+
 
   return (
     <div>
@@ -14,3 +13,5 @@ export default function LikeImage() {
     </div>
   )
 }
+
+export default HOC(LikeImage)
